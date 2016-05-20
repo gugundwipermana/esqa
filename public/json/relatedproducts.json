@@ -1,0 +1,34 @@
+[
+    {
+        "slug": "red-wine",
+        "name": "RED WINE",
+        "subname": "Lip Crayon Collection",
+        "price": "25.00",
+        "image": "lip1.jpg",
+        "star": "4"
+    },
+    {
+        "slug": "blue-wine",
+        "name": "RED WINE",
+        "subname": "Lip Crayon Collection",
+        "price": "21.00",
+        "image": "lip2.jpg",
+        "star": "4"
+    },
+    {
+        "slug": "red-wine",
+        "name": "RED WINE",
+        "subname": "Lip Crayon Collection",
+        "price": "25.00",
+        "image": "lip1.jpg",
+        "star": "4"
+    },
+    {
+        "slug": "blue-wine",
+        "name": "RED WINE",
+        "subname": "Lip Crayon Collection",
+        "price": "21.00",
+        "image": "lip2.jpg",
+        "star": "4"
+    }
+]

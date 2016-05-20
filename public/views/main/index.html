@@ -1,0 +1,144 @@
+<section id="main" class="">
+
+    <div id="carousel-landing" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-landing" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-landing" data-slide-to="1"></li>
+        <li data-target="#carousel-landing" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="img/intro1.png" alt="...">
+          <div class="carousel-caption">
+            <h1>The Beauty  Secrets</h1>
+            <p>Ibus essequi simi, utendic tem nostem que vandelis idestoratios es apelene ctaspid quatia deria doloris plac.</p>
+            <button class="btn btn-primary">DISCOVER</button>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="img/intro2.png" alt="...">
+          <div class="carousel-caption">
+            <h1>The Beauty  Secrets</h1>
+            <p>Ibus essequi simi, utendic tem nostem que vandelis idestoratios es apelene ctaspid quatia deria doloris plac.</p>
+            <button class="btn btn-primary">DISCOVER</button>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="img/intro3.png" alt="...">
+          <div class="carousel-caption">
+            <h1>The Beauty  Secrets</h1>
+            <p>Ibus essequi simi, utendic tem nostem que vandelis idestoratios es apelene ctaspid quatia deria doloris plac.</p>
+            <button class="btn btn-primary">DISCOVER</button>
+          </div>
+        </div>
+        
+      </div>
+
+      <!-- Controls -->
+      <a onclick="return false;" class="left carousel-control" href="#carousel-landing" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a onclick="return false;" class="right carousel-control" href="#carousel-landing" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+        
+</section>
+<section id="info">
+<slick lazy-load="ondemand" slides-to-show="3" slides-to-scroll="1" responsive="breakpoints" ng-if="infos.length">
+    <div ng-repeat="info in infos" style="background-image:url('img/{{ info.image }}');">
+      <div class="caption">
+        <p>{{ info.name }}<br/>
+        <a href="" class="btn btn-primary">MORE</a>
+        </p>
+      </div>
+    </div>
+</slick>
+</section>
+
+<section id="top-sellers" class="">
+        <div class="container">
+            <h2 class="font-pink">Top Sellers</h2>
+                <slick lazy-load="ondemand" slides-to-show="4" slides-to-scroll="1" responsive="breakpoints" ng-if="topsellers.length">
+
+                    <div ng-repeat="topseller in topsellers">
+                        <div class="image" style="background-image:url('img/products/{{ topseller.image }}');">
+                        </div>
+                        <div class="caption">
+                            <p class="spasinull">{{ topseller.name }}</p>
+                            <p class="desc font-italic spasinull">{{ topseller.subname }}</p>
+                            <p class="font-pink font-italic">$ {{ topseller.price }}</p>
+                            <a href="" class="btn btn-primary button-gray" ng-click="cart.addItem(topseller.id, topseller.name, topseller.price, topseller.image, 1)">Add to Bag</a>
+                        </div>
+                    </div>
+                    
+                </slick>
+          </div>
+    </section>
+
+    <section id="instagram">
+        <div class="container">
+
+            <div class="border-gradient"></div>
+
+            <h2 class="font-pink font-italic">#ESQAddicted</h2>
+            <p>SHARE YOUR MOMENT</p>
+            
+            <div class="row">
+                <div ng-repeat="p in pics | orderBy:orderBy" class="col-md-3 col-sm-4 col-xs-6">
+                    <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.low_resolution.url}}" class="img-responsive thumbnail" title="{{p.caption.text}}"></a>
+                </div>
+            </div>
+            <a href="" class="btn btn-primary">View Gallery</a>
+            <!-- <button type="button" class="btn btn-success" ng-click="getMore()">You have {{pics.length}} pictures on page - Click to see more pictures?</button> -->
+
+        </div>
+    </section>
+
+    <section id="footer">
+        <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <ul>
+              <li>HELP</li>
+              <li>FAQ</li>
+              <li>PRIVACY</li>
+              <li>&copy; 2016 ESQA | TERMS OF SERVICE</li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="fsosial">
+              <p><span><i class="ion-social-facebook"></i></span> <a href="">FACEBOOK</a></p>
+              <p><span><i class="ion-social-instagram-outline"></i></span> <a href="">INSTAGRAM</a></p>
+              <p><span><i class="ion-social-twitter"></i></span> <a href="">TWITTER</a></p>
+              <p><span><i class="ion-social-pinterest-outline"></i></span> <a href="">PINTEREST</a></p>
+          </div>
+          <!-- 
+            <ul class="fsosial">
+              <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+              <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+              <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+              <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+            </ul> -->
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <ul>
+              <li>JL. JEND. SUDIRMAN K AV 3 NO 25, JAK ARTA SELATAN, 12345</li>
+              <li>PHONE +62 21 555 1234</li>
+              <li>MOBILE +62 812 3456 7890</li>
+              <li>INFO@ESQA.COM</li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            CREATED 2016
+          </div>
+        </div>
+        </div>
+    </section>

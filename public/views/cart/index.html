@@ -1,0 +1,58 @@
+<div class="summary">
+    <div class="container">
+        <div id="cart">
+            <h3 class="font-pink title">Shopping Bag Summary</h3>
+            <table class="table step">
+                <tr>   
+                    <td class="active" width="25%"><h3 class="font-pink spasinull">01</h3><p>Summary</p></td>
+                    <td width="25%"><h3 class="font-pink spasinull">02</h3><p>Login</p></td>
+                    <td width="25%"><h3 class="font-pink spasinull">03</h3><p>Address & Shipping</p></td>
+                    <td width="25%"><h3 class="font-pink spasinull">04</h3><p>Payment</p></td>
+                </tr>
+            </table>
+
+            <p>Your shopping bag contain: 1 product</p>
+            
+            <table class="table table-striped">
+                <tr ng-repeat="item in cart.items">
+                    <td><img src="img/products/{{ item.image }}" height="40"></td>
+                    <td class="field-name">
+                        <h4 class="spasinull font-pink">{{ item.name }}</h4>
+                        <p>Lipstick</p>
+                    </td>
+                    <td class="field-dll">Qty: <input class="span3 text-center" type="tel" ng-model="item.quantity" ng-change="cart.saveItems()"></td>
+                    <td class="field-dll" align="right">Unit Price:</td>
+                    <td class="field-dll" align="left"><span class="font-pink">{{item.price | currency}}</span></td>
+                    <td class="field-dll"><a href="" ng-click="cart.addItem(item.id, item.name, item.price, item.image, -10000000)"><i class="ion-ios-trash-outline" style="font-size:22px;"></i></a></td>
+                </tr>
+                
+                <tr>
+                    <td colspan="3"></td>
+                    <td align="right">Total Product</td>
+                    <td colspan="2" align="left" style="color: #999;">{{cart.getTotalPrice() | currency}}</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td align="right">Total Tax</td>
+                    <td colspan="2" align="left" style="color: #999;">{{cart.getTotalPrice() | currency}}</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td align="right"><h3 class="font-pink spasinull">Total</h3></td>
+                    <td colspan="2" align="left"><h3 class="font-pink spasinull">{{cart.getTotalPrice() | currency}}</h3></td>
+                </tr>
+
+            </table>
+
+            <hr/>
+            <div class="row">
+                <div class="col-xs-4">
+                        <a type="submit" class="btn btn-primary button-gray">Continue Shopping</a>
+                </div>
+                <div class="col-xs-8" style="text-align: right;">
+                        <a href="#/cart/login" type="submit" class="btn btn-primary button-gray">Next</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

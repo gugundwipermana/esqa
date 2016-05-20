@@ -1,0 +1,3 @@
+esqaApp.controller('AboutController', function() {
+        
+    });

@@ -1,0 +1,33 @@
+    <div class="cart-box" ng-controller = "CartInjectController">
+        <h4 class="font-pink title">Shopping Cart:</h4>
+        <div class="cart-item">
+
+            <div ng-repeat="item in cart.items">
+                <img src="img/products/{{ item.image }}" height="50" class="img-rounded" style="float: left;">
+                <p>{{ item.name }}</p>
+                <p>X{{item.quantity }} {{item.price | currency}}</p>
+            </div>
+            
+        </div>
+
+        <div class="cart-total">
+            <div class="row">
+                <div class="col-xs-6">
+                        <p>Sub Total</p>
+                </div>
+                <div class="col-xs-6" style="text-align: right;">
+                        <p>{{ cart.getTotalPrice() | currency }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6">
+                        <p class="total">Total</p>
+                </div>
+                <div class="col-xs-6" style="text-align: right;">
+                        <p class="total">{{ cart.getTotalPrice() | currency }}</p>
+                </div>
+            </div>
+        </div>
+        <a href="#/cart" type="submit" class="btn btn-primary button-gray" style="width:100%">Checkout</a>
+    </div>

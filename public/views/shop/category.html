@@ -1,0 +1,123 @@
+<div class="submenu">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3">
+                <a href="#/shop/category/lipstick">
+                    <img src="img/sub-menu1.png" />
+                    <p>Lipstick</p>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="">
+                    <img src="img/sub-menu2.png" />
+                    <p>Blush On</p>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="">
+                    <img src="img/sub-menu3.png" />
+                    <p>Mascara</p>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="">
+                    <img src="img/sub-menu4.png" />
+                    <p>Nail Polish</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="category">
+    <div class="container">
+        <div class="row related-product">
+          
+          <div class="col-xs-6 col-md-3" ng-repeat="product in products">
+            <div class="thumbnail">
+              <img src="img/products/{{ product.image }}" alt="..." data-toggle="modal" data-target="#myModal" ng-click="getProduct(product.slug)">
+              <div class="caption">
+                <p class="spasinull"><a href="#/shop/product/{{ product.slug }}">{{ product.name }}</a></p>
+                <p class="desc font-italic spasinull">{{ product.subname }}</p>
+                <p class="font-pink font-italic">$ {{ product.price }}</p>
+                <p>
+                    <i class="ion-ios-star"></i>
+                    <i class="ion-ios-star"></i>
+                    <i class="ion-ios-star"></i>
+                    <i class="ion-ios-star-outline"></i>
+                    <i class="ion-ios-star-outline"></i>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade modal-costum" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#10799;</span></button>
+        <div class="row" style="text-align: left;">
+            <div class="col-sm-5 col-xs-12">
+                <div class="preview">
+                    <img src="img/products/{{ detproducts.image }}" alt="..." class="img-thumbnail border-none" width="100%">
+                    <p>
+                        <i class="ion-ios-star"></i>
+                        <i class="ion-ios-star"></i>
+                        <i class="ion-ios-star"></i>
+                        <i class="ion-ios-star-outline"></i>
+                        <i class="ion-ios-star-outline"></i>
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-7 col-xs-12">
+                <h1 class="font-pink spasinull">{{ detproducts.name }}</h1>
+
+                <p class="des">{{ detproducts.description }}</p>
+                <a href="#/shop/product/{{ detproducts.slug }}" type="submit" data-dismiss="modal" data-backdrop="false" class="btn btn-primary btn-sm button-gray">Product Details</a>
+                <br/><br/>
+                <h4 class="font-pink spasinull">Color Selection</h4>
+                
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="color" ng-repeat="color in detproducts.colors" style="background-color: {{ color.color  }};"></div>
+                    </div>
+                </div>
+                
+
+                <div class="border-gradient"></div>
+
+                <br/>
+                <form class="form-inline">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <label>$ {{ detproducts.price }}</label>
+                        </div>
+                        <div class="col-xs-8" style="text-align: right;">
+                            <div class="form-group">
+                                Qty: 
+                                <select class="form-control input-xs">
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                </select>
+                              </div>
+                              <a type="submit" data-dismiss="modal" class="btn btn-primary btn-xs button-gray" ng-click="cart.addItem(detproducts.id, detproducts.name, detproducts.price, detproducts.image, 1)">Add to Bag</a>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

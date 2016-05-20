@@ -1,0 +1,22 @@
+{
+    "slug": "red-wine",
+    "name": "RED WINE",
+    "subname": "Lip Crayon Collection",
+    "description": "Ciis volupta quuntur aperi aut ut esti tet quibusdam que molorro cus. Ut erit fuga. Nem non repel et faceario velectotae. Sus audita turum es inciisquibus dolore",
+    "price": "25.00",
+    "image": "lip1.jpg",
+    "star": "4",
+    "colors": [
+            {"id": "1", "color": "#edb39f"},
+            {"id": "2", "color": "#f78ccb"},
+            {"id": "3", "color": "#f3809b"},
+            {"id": "4", "color": "#f488a1"},
+            {"id": "5", "color": "#fa5b6f"}
+        ],
+    "subimages": [
+        {"id": "1", "image": "lip1.jpg"},
+        {"id": "2", "image": "lip2.jpg"},
+        {"id": "3", "image": "lip3.jpg"},
+        {"id": "4", "image": "lip4.jpg"}
+    ]
+}

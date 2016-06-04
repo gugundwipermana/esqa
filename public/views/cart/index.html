@@ -11,7 +11,7 @@
                 </tr>
             </table>
 
-            <p>Your shopping bag contain: 1 product</p>
+            <p>Your shopping bag contain: {{cart.getTotalCount()}} product</p>
             
             <table class="table table-striped">
                 <tr ng-repeat="item in cart.items">
@@ -23,23 +23,33 @@
                     <td class="field-dll">Qty: <input class="span3 text-center" type="tel" ng-model="item.quantity" ng-change="cart.saveItems()"></td>
                     <td class="field-dll" align="right">Unit Price:</td>
                     <td class="field-dll" align="left"><span class="font-pink">{{item.price | currency}}</span></td>
-                    <td class="field-dll"><a href="" ng-click="cart.addItem(item.id, item.name, item.price, item.image, -10000000)"><i class="ion-ios-trash-outline" style="font-size:22px;"></i></a></td>
+                    <td class="field-dll"><a href="" ng-click="cart.addItem(item.id, item.name, item.price, item.image, -10000000)"><i class="ion-ios-trash-outline" style="font-size:22px;"></i> Delete</a></td>
                 </tr>
                 
                 <tr>
                     <td colspan="3"></td>
-                    <td align="right">Total Product</td>
+                    <td align="right">Sub Total</td>
                     <td colspan="2" align="left" style="color: #999;">{{cart.getTotalPrice() | currency}}</td>
                 </tr>
                 <tr>
                     <td colspan="3"></td>
-                    <td align="right">Total Tax</td>
-                    <td colspan="2" align="left" style="color: #999;">{{cart.getTotalPrice() | currency}}</td>
+                    <td align="right">Tax</td>
+                    <td colspan="2" align="left" style="color: #999;">{{ 0 | currency }}</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td align="right">Shipping Charge</td>
+                    <td colspan="2" align="left" style="color: #999;">{{ 0 | currency }}</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td align="right">Payment Code</td>
+                    <td colspan="2" align="left" style="color: #999;">{{ 0 | currency }}</td>
                 </tr>
                 <tr>
                     <td colspan="3"></td>
                     <td align="right"><h3 class="font-pink spasinull">Total</h3></td>
-                    <td colspan="2" align="left"><h3 class="font-pink spasinull">{{cart.getTotalPrice() | currency}}</h3></td>
+                    <td colspan="2" align="left"><h3 class="font-pink spasinull">{{ cart.getTotalPrice() | currency }}</h3></td>
                 </tr>
 
             </table>

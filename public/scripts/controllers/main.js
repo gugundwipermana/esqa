@@ -3,7 +3,7 @@ esqaApp
     $scope.cart = DataService.cart;
 
       // INFO
-      $http.get('json/info.json').
+      $http.get('api/v1/infos').
         success(function(data, status, headers, config) {
           $timeout(function() {
             $scope.infos = data;
@@ -11,7 +11,7 @@ esqaApp
         });
 
       // TOP SELLERS
-      $http.get('json/products.json').
+      $http.get('api/v1/products').
         success(function(data, status, headers, config) {
           $timeout(function() {
             $scope.topsellers = data;

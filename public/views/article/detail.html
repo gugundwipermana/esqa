@@ -1,0 +1,36 @@
+<div id="det-article">
+    <!-- <img src="img/infos/{{ info.image }}" style="width:100%;"> -->
+    <div class="banner" style="background-image: url('img/infos/{{ info.image }}');">
+    </div>
+
+    <div class="container">
+        <h2 class="title font-pink">{{ info.name }}</h2>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <div class="col-sm-8 col-xs-12">
+                <p ng-bind-html="info.description" style="line-height: 200%;"></p>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+
+                <ul class="media-list">
+
+                  <li class="media" ng-repeat="info in infos">
+                    <div class="media-left">
+                      <a href="#">
+                        <img class="media-object" src="img/infos/{{ info.image }}" alt="..." width="60">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <a href="#/article/{{ info.slug }}"><h4 class="media-heading font-pink">{{ info.name }}</h4></a>
+                      <p>{{ info.created_at | formatDate }} | Make Up</p>
+                    </div>
+                  </li>
+                 
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>

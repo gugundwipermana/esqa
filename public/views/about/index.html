@@ -1,4 +1,4 @@
-<img src="img/about.png" style="width:100%;">
+<img src="img/{{ about.image }}" style="width:100%;">
 
 <div id="about">
 
@@ -6,9 +6,6 @@
 
         <div class="line"></div>
 
-        <p>Pis volupie nisquam re eari venim id moluptatur reratqui qui voluptatem.
-        sinctotas apic te dolorat iisciae perferrum atusamusda venia inturiae platur alit andit
-        quisquam esto id moluptatium sintistium consequi rat opti nullorem
-        es re que sundae sint.</p>
+        <p ng-bind-html="about.description" style="line-height: 200%;"></p>
 
 </div>

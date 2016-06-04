@@ -51,7 +51,7 @@ h4 {
 }
 
 h5 { 
-    font-size: .83em;
+    font-size: 1em;
     margin-top: 1.67em;
     margin-bottom: 1.67em;
 }
@@ -78,6 +78,14 @@ h6 {
 ul {
   list-style: none;
 }
+
+a {
+  color: #f3c3ac;
+}
+    a:hover {
+      color: #be7567;
+      text-decoration: none;
+    }
 
 .panel-gradient {
     text-align: center;
@@ -264,6 +272,36 @@ p.des {
   border: 1px solid #999;
 }
 
+.form-costum .form-control {
+  border: 0px;
+  border-bottom: 1px solid transparent;
+      -moz-border-image: -moz-linear-gradient(left, #be7567 0%, #f3c3ac 100%);
+      -webkit-border-image: -webkit-linear-gradient(left, #be7567 0%, #f3c3ac 100%);
+      border-image: linear-gradient(to right, #be7567 0%, #f3c3ac 100%);
+
+      border-image-slice: 1;
+
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+}
+
+.form-costum .input-group-addon {
+  border: 0px;
+  border-bottom: 1px solid transparent;
+      -moz-border-image: -moz-linear-gradient(left, #be7567 0%, #be7567 100%);
+      -webkit-border-image: -webkit-linear-gradient(left, #be7567 0%, #be7567 100%);
+      border-image: linear-gradient(to right, #be7567 0%, #be7567 100%);
+
+      border-image-slice: 1;
+
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+
+    background-color: rgba(0,0,0,0);
+}
+
 /* SLICK */
 
 .slick-prev, .slick-next {
@@ -301,7 +339,7 @@ p.des {
 
 
 slick div {
-    height: 250px;
+    height: 300px;
     position: relative;
 
     -webkit-background-size: cover;
@@ -484,7 +522,7 @@ slick div {
     top: 0px;
     font-size: 1.5em;
     padding: 0 10%;
-    padding-top: 3em;
+    padding-top: 5em;
 }
 
 
@@ -526,6 +564,11 @@ slick div {
 
 #top-sellers p.desc {
     color: #999;
+}
+
+#top-sellers .slick-prev, #top-sellers .slick-next {
+    bottom: 50%;
+    background-image: url('../img/arrow2.png');
 }
 
 .border-gradient {
@@ -812,7 +855,21 @@ slick div {
   text-align: center;
 }
 
+#det-shop slick div {
+    height: auto;
+    position: relative;
+}
 
+#det-shop .slick-prev, #det-shop .slick-next {
+    bottom: 30%;
+    background-image: url('../img/arrow2.png');
+    opacity: .5;
+    margin-left: -30px;
+}
+
+#det-shop .slick-next {
+    margin-right: -30px;
+}
 
 /**
  * ----------------------------------------------------------
@@ -829,12 +886,33 @@ slick div {
 
 #category .thumbnail {
   cursor: pointer;
-  
+}
+
+#category .quick-look {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+
+  /* ANIMASI */
+    transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+}
+
+#category .thumbnail:hover .quick-look {
+  opacity: 1;
 }
 
 #category .caption a {
   color: #000;
 }
+    #category .caption a:hover {
+      color: #be7567;
+    }
 
 .color {
   width: 20px;
@@ -860,6 +938,7 @@ slick div {
 #about {
   width: 90%; 
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 @media (min-width: 768px) {
@@ -896,13 +975,13 @@ slick div {
     width: 100%;
     height: 100%;
     text-align: left;
+    margin-top: 50px;
 }
 #contact .row {
     width: 100%;
     height: 100%;
 }
 .contact-background {
-  background-image: url('../img/contact.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -915,7 +994,7 @@ slick div {
 }
 
 .contact-text {
-  padding: 50px 30px 0 30px;
+  padding: 0px 30px 0 30px;
 }
 
 @media (min-width: 768px) {
@@ -984,6 +1063,11 @@ slick div {
   min-height: 100%;
   position: absolute;
   background-color: #f3e8e2;
+}
+
+.summary ul {
+  margin: 0;
+  padding: 0;
 }
 
 #cart {
@@ -1083,3 +1167,109 @@ slick div {
 .cart-box .cart-total { margin: 10px 0; }
 .cart-box .cart-total p { color: #999; margin: 0px; }
 .cart-box .cart-total p.total { color: #be7567; }
+
+
+
+
+
+
+
+
+
+
+
+
+/* VOTE */
+.vote i{
+  color: #ccc;
+}
+
+.vote i.select {
+  color: #333;
+}
+
+
+
+
+
+/**
+ * ---------------------------------------------------------------
+ * AUTH
+ *
+ */
+
+ .auth {
+
+ }
+
+
+.auth-background {
+  position: absolute;
+  background-image: url('../img/back-login.jpg');
+  background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+
+    background-position: center;
+    
+    width: 100%;
+    height: 100%;
+}
+
+.box-auth {
+  margin-top: 100px;
+  background-color: white;
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 50px;
+
+  color: #666;
+
+
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    border-radius: 2px;
+}
+
+
+
+#det-article {
+  text-align: left;
+}
+
+    #det-article .banner {
+        width: 100%;
+        height: 500px;
+
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    #det-article .title {
+      margin-bottom: .2em;
+    }
+
+    #det-article .line {
+      width:80px; 
+      height: 2px; 
+
+      background-color: #ae807c;
+    /* background: red; */ /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(left, #be7567 , #f3c3ac); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(right, #be7567, #f3c3ac); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(right, #be7567, #f3c3ac); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(to right, #be7567, #f3c3ac); /* Standard syntax */
+
+      margin-bottom: 1em;
+    }
+
+    #det-article p {
+      color: #666;
+      text-align: justify;
+    }

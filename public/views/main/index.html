@@ -5,7 +5,6 @@
       <ol class="carousel-indicators">
         <li data-target="#carousel-landing" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-landing" data-slide-to="1"></li>
-        <li data-target="#carousel-landing" data-slide-to="2"></li>
       </ol>
 
       <!-- Wrapper for slides -->
@@ -20,16 +19,7 @@
         </div>
 
         <div class="item">
-          <img src="img/intro2.png" alt="...">
-          <div class="carousel-caption">
-            <h1>The Beauty  Secrets</h1>
-            <p>Ibus essequi simi, utendic tem nostem que vandelis idestoratios es apelene ctaspid quatia deria doloris plac.</p>
-            <button class="btn btn-primary">DISCOVER</button>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="img/intro3.png" alt="...">
+          <img src="img/z2b2035-edit.jpg" alt="...">
           <div class="carousel-caption">
             <h1>The Beauty  Secrets</h1>
             <p>Ibus essequi simi, utendic tem nostem que vandelis idestoratios es apelene ctaspid quatia deria doloris plac.</p>
@@ -53,10 +43,10 @@
 </section>
 <section id="info">
 <slick lazy-load="ondemand" slides-to-show="3" slides-to-scroll="1" responsive="breakpoints" ng-if="infos.length">
-    <div ng-repeat="info in infos" style="background-image:url('img/{{ info.image }}');">
+    <div ng-repeat="info in infos" style="background-image:url('img/infos/{{ info.image }}');">
       <div class="caption">
         <p>{{ info.name }}<br/>
-        <a href="" class="btn btn-primary">MORE</a>
+        <a href="#/article/{{ info.slug }}" class="btn btn-primary">MORE</a>
         </p>
       </div>
     </div>
@@ -74,7 +64,7 @@
                         <div class="caption">
                             <p class="spasinull">{{ topseller.name }}</p>
                             <p class="desc font-italic spasinull">{{ topseller.subname }}</p>
-                            <p class="font-pink font-italic">$ {{ topseller.price }}</p>
+                            <p class="font-pink font-italic">{{ topseller.price | currency }}</p>
                             <a href="" class="btn btn-primary button-gray" ng-click="cart.addItem(topseller.id, topseller.name, topseller.price, topseller.image, 1)">Add to Bag</a>
                         </div>
                     </div>

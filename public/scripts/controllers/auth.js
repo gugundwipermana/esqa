@@ -1,0 +1,4 @@
+esqaApp
+    .controller('AuthController', function() {
+        
+    })

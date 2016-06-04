@@ -1,33 +1,4 @@
-<div class="submenu">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-3">
-                <a href="#/shop/category/lipstick">
-                    <img src="img/sub-menu1.png" />
-                    <p>Lipstick</p>
-                </a>
-            </div>
-            <div class="col-xs-3">
-                <a href="">
-                    <img src="img/sub-menu2.png" />
-                    <p>Blush On</p>
-                </a>
-            </div>
-            <div class="col-xs-3">
-                <a href="">
-                    <img src="img/sub-menu3.png" />
-                    <p>Mascara</p>
-                </a>
-            </div>
-            <div class="col-xs-3">
-                <a href="">
-                    <img src="img/sub-menu4.png" />
-                    <p>Nail Polish</p>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+<div ng-include="'views/partials/sub-menu.html'"></div>
 
 <div id="category">
     <div class="container">
@@ -35,17 +6,19 @@
           
           <div class="col-xs-6 col-md-3" ng-repeat="product in products">
             <div class="thumbnail">
-              <img src="img/products/{{ product.image }}" alt="..." data-toggle="modal" data-target="#myModal" ng-click="getProduct(product.slug)">
+              <img src="img/products/{{ product.image }}" alt="...">
+              <div class="quick-look"><a type="submit" class="btn btn-primary button-gray" data-toggle="modal" data-target="#myModal" ng-click="getProduct(product.slug)">Quick Look</a></div>
               <div class="caption">
                 <p class="spasinull"><a href="#/shop/product/{{ product.slug }}">{{ product.name }}</a></p>
                 <p class="desc font-italic spasinull">{{ product.subname }}</p>
-                <p class="font-pink font-italic">$ {{ product.price }}</p>
-                <p>
-                    <i class="ion-ios-star"></i>
-                    <i class="ion-ios-star"></i>
-                    <i class="ion-ios-star"></i>
-                    <i class="ion-ios-star-outline"></i>
-                    <i class="ion-ios-star-outline"></i>
+                <p class="font-pink font-italic">{{ product.price  | currency }}</p>
+
+                <p class="vote">
+                    <i class="ion-ios-star select" ng-if="product.tot_vote >= 1"></i><i class="ion-ios-star" ng-if="product.tot_vote < 1"></i>
+                    <i class="ion-ios-star select" ng-if="product.tot_vote >= 2"></i><i class="ion-ios-star" ng-if="product.tot_vote < 2"></i>
+                    <i class="ion-ios-star select" ng-if="product.tot_vote >= 3"></i><i class="ion-ios-star" ng-if="product.tot_vote < 3"></i>
+                    <i class="ion-ios-star select" ng-if="product.tot_vote >= 4"></i><i class="ion-ios-star" ng-if="product.tot_vote < 4"></i>
+                    <i class="ion-ios-star select" ng-if="product.tot_vote >= 5"></i><i class="ion-ios-star" ng-if="product.tot_vote < 5"></i>
                 </p>
               </div>
             </div>
@@ -69,22 +42,22 @@
             <div class="col-sm-5 col-xs-12">
                 <div class="preview">
                     <img src="img/products/{{ detproducts.image }}" alt="..." class="img-thumbnail border-none" width="100%">
-                    <p>
-                        <i class="ion-ios-star"></i>
-                        <i class="ion-ios-star"></i>
-                        <i class="ion-ios-star"></i>
-                        <i class="ion-ios-star-outline"></i>
-                        <i class="ion-ios-star-outline"></i>
+                    <p class="vote">
+                        <i class="ion-ios-star select" ng-if="vote.tot_vote >= 1"></i><i class="ion-ios-star" ng-if="vote.tot_vote < 1"></i>
+                        <i class="ion-ios-star select" ng-if="vote.tot_vote >= 2"></i><i class="ion-ios-star" ng-if="vote.tot_vote < 2"></i>
+                        <i class="ion-ios-star select" ng-if="vote.tot_vote >= 3"></i><i class="ion-ios-star" ng-if="vote.tot_vote < 3"></i>
+                        <i class="ion-ios-star select" ng-if="vote.tot_vote >= 4"></i><i class="ion-ios-star" ng-if="vote.tot_vote < 4"></i>
+                        <i class="ion-ios-star select" ng-if="vote.tot_vote >= 5"></i><i class="ion-ios-star" ng-if="vote.tot_vote < 5"></i>
                     </p>
                 </div>
             </div>
             <div class="col-sm-7 col-xs-12">
                 <h1 class="font-pink spasinull">{{ detproducts.name }}</h1>
 
-                <p class="des">{{ detproducts.description }}</p>
+                <p class="des" ng-bind-html="detproducts.description"></p>
                 <a href="#/shop/product/{{ detproducts.slug }}" type="submit" data-dismiss="modal" data-backdrop="false" class="btn btn-primary btn-sm button-gray">Product Details</a>
                 <br/><br/>
-                <h4 class="font-pink spasinull">Color Selection</h4>
+                <h5 class="font-pink spasinull">Color Selection</h5>
                 
                 <div class="row">
                     <div class="col-xs-12">
@@ -99,7 +72,7 @@
                 <form class="form-inline">
                     <div class="row">
                         <div class="col-xs-4">
-                            <label>$ {{ detproducts.price }}</label>
+                            <label>{{ detproducts.price  | currency }}</label>
                         </div>
                         <div class="col-xs-8" style="text-align: right;">
                             <div class="form-group">

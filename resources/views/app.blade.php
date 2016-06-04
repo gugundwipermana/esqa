@@ -24,6 +24,8 @@
     <script src="{{ asset('bower_components/angular/angular.min.js') }}"></script>
     <script src="{{ asset('bower_components/angular-resource/angular-resource.min.js') }}"></script>
     <script src="{{ asset('bower_components/angular-route/angular-route.min.js') }}"></script>
+    <script src="{{ asset('bower_components/angular-sanitize/angular-sanitize.min.js') }}"></script>
+    <script src="{{ asset('js/angular-locale_id-id.js') }}"></script>
 
 
     <script src="{{ asset('scripts/routes.js') }}"></script>
@@ -33,6 +35,7 @@
     <script src="{{ asset('scripts/controllers/main.js') }}"></script>
     <script src="{{ asset('scripts/controllers/shop.js') }}"></script>
     <script src="{{ asset('scripts/controllers/cart.js') }}"></script>
+    <script src="{{ asset('scripts/controllers/article.js') }}"></script>
 
     <script src="{{ asset('scripts/shoppingCart.js') }}" type="text/javascript"></script>
 
@@ -41,15 +44,15 @@
 <body ng-app="Client">
 
     <div class="logo">
-        <a class="navbar-brand page-scroll" href="#page-top"><img src="{{ asset('img/logo.png') }}" height="40"></a>
+        <a class="navbar-brand page-scroll" href="#page-top"><img src="{{ asset('img/logo.png') }}" height="30" style="margin:5px 0 5px 10px;"></a>
     </div>
 
     <div class="account" ng-controller = "CartInjectController">
-        <a href="#">LOGIN</a> 
-        <a href="">|</a> 
-        <a href="#">SIGNUP</a>
-        <a href="#"><img src="{{ asset('img/cart.png') }}" width="25"></a>
-        <p class="cart-amount"><a href="">@{{cart.getTotalCount()}}</a></p>
+        <a href="#/auth">LOGIN | SIGNUP</a>
+        <a href="" id="show-cart"><img src="{{ asset('img/cart.png') }}" width="25"></a>
+        
+        <p class="cart-amount" ng-if="cart.getTotalCount() > 0"><a href="">@{{cart.getTotalCount()}}</a></p>
+
     </div>
 
     <div class="sosial">
@@ -84,7 +87,7 @@
                         <a href="#about">About</a>
                     </li>
                     <li>
-                        <a href="" style="pointer-events: none; cursor: default;">Blog</a>
+                        <a href="" style="font-style: italic; font-size:16px; pointer-events: none; cursor: default;">Blog</a>
                     </li>
                     <li>
                         <a href="#contact">Contact</a>
@@ -116,9 +119,9 @@
         /*
          * --------------------------------------------
          * SHOW HIDE CART
-         *--------------------------------------------
+         *---------------------------------------------
          */
-        $('.cart-amount').click(function() {
+        $('#show-cart').click(function() {
             if($('.cart-box.active').is(":visible")) {
                 $(".cart-box").removeClass("active");
             } else {
@@ -126,7 +129,6 @@
             }
         });
 
-        
     </script>
 
 </body>

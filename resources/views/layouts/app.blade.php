@@ -48,6 +48,42 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Master <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/admin/categories') }}"><i class="fa fa-btn fa-sign-out"></i>Category Product</a></li>
+                            <li><a href="{{ url('/admin/products') }}"><i class="fa fa-btn fa-sign-out"></i>Products</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{{ url('/admin/infos') }}"><i class="fa fa-btn fa-sign-out"></i>Info / Article</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Transaction <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/admin/orders') }}"><i class="fa fa-btn fa-sign-out"></i>Orders</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Config <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/admin/abouts/1') }}"><i class="fa fa-btn fa-sign-out"></i>About</a></li>
+                            <li><a href="{{ url('/admin/contacts/1') }}"><i class="fa fa-btn fa-sign-out"></i>Contact</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{{ url('/admin/users') }}"><i class="fa fa-btn fa-sign-out"></i>Users</a></li>
+                        </ul>
+                    </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

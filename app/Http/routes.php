@@ -44,3 +44,28 @@ Route::group(['prefix' => 'api/v1'], function() {
     Route::resource('orders', 'Api\OrdersController');
     Route::resource('orderdetails', 'Api\OrderdetailsController');
 });
+
+/**
+ * ------------------------------------------------------------------
+ * ADMIN
+ *
+ */
+
+Route::group(['prefix' => 'admin'], function() {
+
+    Route::resource('categories', 'CategoriesController');
+    Route::resource('products', 'ProductsController');
+    Route::resource('colors', 'ColorsController');
+    Route::resource('subimages', 'SubimagesController');
+    Route::resource('votes', 'VotesController');
+
+    Route::resource('users', 'UsersController');
+
+    Route::resource('infos', 'InfosController');
+    Route::resource('abouts', 'AboutsController');
+    Route::resource('contacts', 'ContactsController');
+
+    Route::resource('orders', 'OrdersController');
+    Route::resource('orderdetails', 'OrderdetailsController');
+    
+});

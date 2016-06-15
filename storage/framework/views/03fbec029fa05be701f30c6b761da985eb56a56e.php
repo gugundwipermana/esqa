@@ -36,6 +36,7 @@
     <script src="<?php echo e(asset('scripts/controllers/shop.js')); ?>"></script>
     <script src="<?php echo e(asset('scripts/controllers/cart.js')); ?>"></script>
     <script src="<?php echo e(asset('scripts/controllers/article.js')); ?>"></script>
+    <script src="<?php echo e(asset('scripts/controllers/auth.js')); ?>"></script>
 
     <script src="<?php echo e(asset('scripts/shoppingCart.js')); ?>" type="text/javascript"></script>
 
@@ -48,9 +49,19 @@
     </div>
 
     <div class="account" ng-controller = "CartInjectController">
-        <a href="#/auth">LOGIN | SIGNUP</a>
+        <!-- <a href="#/auth">LOGIN | SIGNUP</a> -->
+
+        <span ng-controller = "AuthInjectController">
+            <span ng-if="user === '' ">
+                <a href="#/auth">LOGIN | SIGNUP</a>
+            </span>
+            <span ng-if="user !== '' ">
+                <a ng-if="user.name">{{ user.name }}</a>
+            </span>
+        </span>
+
         <a href="" id="show-cart"><img src="<?php echo e(asset('img/cart.png')); ?>" width="25"></a>
-        
+
         <p class="cart-amount" ng-if="cart.getTotalCount() > 0"><a href="">{{cart.getTotalCount()}}</a></p>
 
     </div>

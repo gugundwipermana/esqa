@@ -8,6 +8,12 @@
                 <div class="panel-heading">categories</div>
 
                 <div class="panel-body">
+                    <a href="{{ url('admin/categories/create') }}">
+                        <button class="btn btn-info btn-sm" data-toggle="tooltip" title="Tambah Event Baru">Add New</button>
+                    </a>
+
+                    <hr/>
+
                     <table id="example1" class="table table-bordered table-striped">
                       <thead>
                         <tr>
@@ -29,7 +35,7 @@
                           <td>
                             <div class="form-inline">
                               <div class="form-group">
-                                <a href="{{ url('categories', $category->id) }}/edit" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Edit"><i class="fa fa-edit"></i></a>
+                                <a href="{{ url('admin/categories', $category->id) }}/edit" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Edit"><i class="fa fa-edit"></i></a>
                               </div>
                               <div class="form-group">
                                 {!! Form::open(['method' => 'DELETE', 'route' => ['admin.categories.destroy', $category->id]]) !!}

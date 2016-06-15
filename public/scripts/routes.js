@@ -30,7 +30,7 @@ var esqaApp = angular.module('Client', ['ngResource', 'ngRoute', 'slick', 'ngSan
         })
         .when('/cart/login', {
             templateUrl: 'views/cart/login.html',
-            controller: 'CartController'
+            controller: 'AuthController'
         })
         .when('/cart/address', {
             templateUrl: 'views/cart/address.html',
@@ -124,3 +124,32 @@ var esqaApp = angular.module('Client', ['ngResource', 'ngRoute', 'slick', 'ngSan
          return formattedDate;
        }
     }); 
+
+
+    // AUTH
+    esqaApp.factory('AuthInterceptor', function($window, $q) {
+        return {
+            request: function(config) {
+                config.headers = config.headers || {};
+                if ($window.sessionStorage.getItem('token')) {
+                    config.headers.Authorization = 'Bearer ' + $window.sessionStorage.getItem('token');
+
+                    console.log("Token is active");
+
+                }
+                return config || $q.when(config);
+            },
+            response: function(response) {
+                if (response.status === 401) {
+                    // TODO: Redirect user to login page.
+                    $location.path('/signin');
+                }
+                return response || $q.when(response);
+            }
+        };
+    });
+
+// Register the previously created AuthInterceptor.
+esqaApp.config(function ($httpProvider) {
+        $httpProvider.interceptors.push('AuthInterceptor');
+    });

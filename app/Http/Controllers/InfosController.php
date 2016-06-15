@@ -31,6 +31,7 @@ class InfosController extends Controller
     public function create()
     {
         //
+        return view('infos.create');
     }
 
     /**
@@ -64,6 +65,9 @@ class InfosController extends Controller
     public function edit($id)
     {
         //
+        $info = Info::where('id', '=', $id)->first();
+
+        return view('infos.edit', compact('info'));
     }
 
     /**
@@ -87,5 +91,8 @@ class InfosController extends Controller
     public function destroy($id)
     {
         //
+        \DB::table('infos')->where('id', '=', $id)->delete();
+
+        return redirect('admin/infos');
     }
 }

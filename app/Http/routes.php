@@ -19,10 +19,20 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+/**
+ * ------------------------------------------------------------------
+ * API AUTH
+ *
+ */
+
+Route::post('api/register', 'TokenAuthController@register');
+Route::post('api/authenticate', 'TokenAuthController@authenticate');
+Route::get('api/authenticate/user', 'TokenAuthController@getAuthenticatedUser');
+
 
 /**
  * ------------------------------------------------------------------
- * API
+ * API REST
  *
  */
 
@@ -31,11 +41,15 @@ Route::group(['prefix' => 'api/v1'], function() {
     Route::get('products/relateds', 'Api\ProductsController@relateds');
     Route::get('products/vote/{slug}', 'Api\ProductsController@vote');
 
+    Route::get('users/getUser', 'Api\UsersController@getUser');
+
     Route::resource('categories', 'Api\CategoriesController');
     Route::resource('products', 'Api\ProductsController');
     Route::resource('colors', 'Api\ColorsController');
     Route::resource('subimages', 'Api\SubimagesController');
     Route::resource('votes', 'Api\VotesController');
+
+    Route::resource('users', 'Api\UsersController');
 
     Route::resource('infos', 'Api\InfosController');
     Route::resource('abouts', 'Api\AboutsController');

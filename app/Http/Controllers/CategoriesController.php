@@ -31,6 +31,7 @@ class CategoriesController extends Controller
     public function create()
     {
         //
+        return view('categories.create');
     }
 
     /**
@@ -64,6 +65,9 @@ class CategoriesController extends Controller
     public function edit($id)
     {
         //
+        $category = Category::where('id', '=', $id)->first();
+
+        return view('categories.edit', compact('category'));
     }
 
     /**
@@ -87,5 +91,8 @@ class CategoriesController extends Controller
     public function destroy($id)
     {
         //
+        \DB::table('categories')->where('id', '=', $id)->delete();
+
+        return redirect('admin/categories');
     }
 }

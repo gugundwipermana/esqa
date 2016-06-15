@@ -57,7 +57,13 @@
             <hr/>
             <div class="row">
                 <div class="col-xs-4">
-                        <a type="submit" class="btn btn-primary button-gray">Continue Shopping</a>
+                    <a type="submit" class="btn btn-primary button-gray">Continue Shopping</a>
+                    <button 
+                        class="btn btn-danger button-gray" 
+                        ng-click="cart.clearItems()" 
+                        ng-disabled="cart.getTotalCount() < 1" >
+                        <i class="icon-trash icon-white" /> Clear Cart
+                    </button>
                 </div>
                 <div class="col-xs-8" style="text-align: right;">
                         <a href="#/cart/login" type="submit" class="btn btn-primary button-gray">Next</a>

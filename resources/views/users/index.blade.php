@@ -29,7 +29,7 @@
                           <td>
                             <div class="form-inline">
                               <div class="form-group">
-                                <a href="{{ url('users', $user->id) }}/edit" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Edit"><i class="fa fa-edit"></i></a>
+                                <a href="{{ url('admin/users', $user->id) }}/edit" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Edit"><i class="fa fa-edit"></i></a>
                               </div>
                               <div class="form-group">
                                 {!! Form::open(['method' => 'DELETE', 'route' => ['admin.users.destroy', $user->id]]) !!}

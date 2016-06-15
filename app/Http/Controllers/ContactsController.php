@@ -64,6 +64,9 @@ class ContactsController extends Controller
     public function edit($id)
     {
         //
+        $contact = Contact::where('id', '=', $id)->first();
+
+        return view('contacts.edit', compact('contact'));
     }
 
     /**

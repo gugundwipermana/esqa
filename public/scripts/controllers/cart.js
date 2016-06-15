@@ -17,7 +17,7 @@ esqaApp
 
             $http({
                 method: 'POST',
-                url: 'http://localhost/Web/ESQA/public/api/v1/orders',
+                url: 'api/v1/orders',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -31,7 +31,7 @@ esqaApp
             //-------------------------------------------------
             $http({
                 method: 'POST',
-                url: 'http://localhost/Web/ESQA/public/api/v1/orderdetails',
+                url: 'api/v1/orderdetails',
                 headers: {
                     'Content-Type': 'application/json'
                 },

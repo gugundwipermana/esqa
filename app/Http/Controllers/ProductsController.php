@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Product;
+use App\Category;
 
 class ProductsController extends Controller
 {
@@ -31,6 +32,9 @@ class ProductsController extends Controller
     public function create()
     {
         //
+        $categories = Category::lists('name', 'id');
+
+        return view('products.create', compact('categories'));
     }
 
     /**
@@ -42,6 +46,7 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -64,6 +69,10 @@ class ProductsController extends Controller
     public function edit($id)
     {
         //
+        $product = Product::where('id', '=', $id)->first();
+        $categories = Category::lists('name', 'id');
+
+        return view('products.edit', compact('product', 'categories'));
     }
 
     /**
@@ -87,5 +96,8 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         //
+        \DB::table('products')->where('id', '=', $id)->delete();
+
+        return redirect('admin/products');
     }
 }

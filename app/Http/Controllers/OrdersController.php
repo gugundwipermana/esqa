@@ -90,5 +90,8 @@ class OrdersController extends Controller
     public function destroy($id)
     {
         //
+        \DB::table('orders')->where('id', '=', $id)->delete();
+
+        return redirect('admin/orders');
     }
 }

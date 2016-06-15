@@ -64,6 +64,9 @@ class AboutsController extends Controller
     public function edit($id)
     {
         //
+        $about = About::where('id', '=', $id)->first();
+
+        return view('abouts.edit', compact('about'));
     }
 
     /**

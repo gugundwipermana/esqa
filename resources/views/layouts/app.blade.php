@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>ESQA</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
@@ -40,7 +40,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                    ESQA
                 </a>
             </div>
 
@@ -55,10 +55,10 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/admin/categories') }}"><i class="fa fa-btn fa-sign-out"></i>Category Product</a></li>
-                            <li><a href="{{ url('/admin/products') }}"><i class="fa fa-btn fa-sign-out"></i>Products</a></li>
+                            <li><a href="{{ url('/admin/categories') }}"><i class="fa fa-btn fa-list"></i>Category Product</a></li>
+                            <li><a href="{{ url('/admin/products') }}"><i class="fa fa-btn fa-gift"></i>Products</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="{{ url('/admin/infos') }}"><i class="fa fa-btn fa-sign-out"></i>Info / Article</a></li>
+                            <li><a href="{{ url('/admin/infos') }}"><i class="fa fa-btn fa-newspaper-o"></i>Info / Article</a></li>
                         </ul>
                     </li>
 
@@ -68,7 +68,7 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/admin/orders') }}"><i class="fa fa-btn fa-sign-out"></i>Orders</a></li>
+                            <li><a href="{{ url('/admin/orders') }}"><i class="fa fa-btn fa-shopping-cart"></i>Orders</a></li>
                         </ul>
                     </li>
 
@@ -78,10 +78,10 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/admin/abouts/1') }}"><i class="fa fa-btn fa-sign-out"></i>About</a></li>
-                            <li><a href="{{ url('/admin/contacts/1') }}"><i class="fa fa-btn fa-sign-out"></i>Contact</a></li>
+                            <li><a href="{{ url('/admin/abouts/1') }}"><i class="fa fa-btn fa-meh-o"></i>About</a></li>
+                            <li><a href="{{ url('/admin/contacts/1') }}"><i class="fa fa-btn fa-phone-square"></i>Contact</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="{{ url('/admin/users') }}"><i class="fa fa-btn fa-sign-out"></i>Users</a></li>
+                            <li><a href="{{ url('/admin/users') }}"><i class="fa fa-btn fa-users"></i>Users</a></li>
                         </ul>
                     </li>
                 </ul>

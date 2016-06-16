@@ -15,13 +15,17 @@
                 <div class="col-sm-6 col-xs-12">
                         <h4>Your Delivery Address</h4>
                         <hr/>
-                        <h4 class="font-pink">Ms. Margot Robbie</h4>
-                        <ul>
-                            <li>Jl. Menteng Raya No 7A</li>
-                            <li>Jakarta Pusat 12345</li>
-                            <li>Indonesia</li>
-                            <li>+6281234567890</li>
-                        </ul>
+
+                        <span ng-controller = "AuthInjectController">
+                            <h4 class="font-pink">{{ user.name }} {{ user.last_name }}</h4>
+                            <ul>
+                                <li>{{ user.address }}</li>
+                                <li>{{ user.location_id }}</li>
+                                <li>Indonesia</li>
+                                <li>{{ user.phone }}</li>
+                            </ul>
+                        </span>
+
                         <hr/>
                         <button type="submit" class="btn btn-primary button-gray">Update</button>
                         <button type="submit" class="btn btn-primary button-gray">Add New Address</button>

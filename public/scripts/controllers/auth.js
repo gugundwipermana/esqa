@@ -34,6 +34,41 @@ esqaApp
             });
         };
 
+        $scope.signup = function(signupForm) {
+            var formData = {
+                name: $scope.name,
+                email: $scope.email,
+                password: $scope.password,
+                location_id: $scope.location_id,
+                postal: $scope.postal,
+                last_name: $scope.last_name,
+                address: $scope.address,
+                phone: $scope.phone,
+            }
+
+            console.log(formData);
+
+            $http({
+                header: {
+                    'Content-Type': 'application/json'
+                },
+                url: 'api/register', 
+                method: "POST",
+                data: formData
+            }).success(function (data) {
+                // Stores the token until the user closes the browser window.
+                $window.sessionStorage.setItem('token', data.token);
+                //$location.path('/');
+                //this.document.location.href = 'http://localhost/WEB/ESQA/public';
+
+                window.location.reload();
+
+            }).error(function () {
+                $window.sessionStorage.removeItem('token');
+                // TODO: Show something like "Username or password invalid."
+            });
+        }
+
         
     })
     .controller('AuthInjectController', function($scope, $http) {
